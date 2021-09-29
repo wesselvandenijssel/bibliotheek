@@ -27,4 +27,5 @@ if (isset($login)) {
 
 </form>
 
-<a href="register.php">Register new account</a>
+<a class="btn btn-primary" href="register.php">Register new account</a>
+
