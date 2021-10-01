@@ -44,9 +44,9 @@
                 }
                 ?>
                 <a class="nav-link" href="create.php">Create</a>
-                <a class="nav-link" href="#">Read</a>
+                <a class="nav-link" href="read.php">Read</a>
                 <a class="nav-link" href="update.php?update=<?php echo $edit;?>">Update</a>
-                <a class="nav-link" href="#">Delete</a>
+                <a class="nav-link" href="delete.php?delete=<?php echo $edit;?>">Delete</a>
             </nav>
 
             <?php

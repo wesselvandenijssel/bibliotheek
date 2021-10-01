@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item mt-2">
-                    <a href="index.php" type="button" class="btn btn-primary">Home</a>
+                    <a href="../index.php" type="button" class="btn btn-primary">Home</a>
                 </li>
                 <li class="nav-item mt-2">
                     <a href="../admin" type="button" class="btn btn-secondary">Admin CRUD</a>
