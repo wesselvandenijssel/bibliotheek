@@ -28,7 +28,7 @@
                     <a href="index.php" type="button" class="btn btn-primary">Home</a>
                 </li>
                 <li class="nav-item mt-2">
-                    <a href="admin" type="button" class="btn btn-secondary">Admin CRUD</a>
+                    <a href="../admin" type="button" class="btn btn-secondary">Admin CRUD</a>
                 </li>
                 <li class="nav-item mt-2">
                     <a href="views/books.php" type="button" class="btn btn-secondary">My books</a>

@@ -3,7 +3,7 @@
 ?>
 <div class="alert alert-success" role="alert">
     Hey, <?php echo $_SESSION['user_name']; ?>. You are logged in.
-    Rent books:
+    Edit:
 </div>
 
 <div class="container">
@@ -17,44 +17,44 @@
             $liqry->bind_result($id, $title, $author, $isbn13, $format, $publisher, $pages, $dimensions, $overview);
             if ($liqry->execute()) {
                 $liqry->store_result();
+                ?>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <?php
                 while ($liqry->fetch()) { 
-                    if ($pages == "") {
-                        $pages = "undefined";
-                    }
                     ?>
+                <a class="dropdown-item" href="?id=<?php echo $id;?>"><?php echo $id;?></a>
 
-            <?php
-                    $locationonclick = "' onclick='location.href=\"views/rent.php?id=" . $id . "\"'";
-                    ?>
-            <div class='col-md-3 '>
-                <div class='mr-2'>
-                    <div class="row">
-                        <div class='card' <?php echo $locationonclick  ?>>
-                            <!-- <img class='card-img-top' src='assets/img/product.png' alt='Card image cap'> -->
-                            <div class='card-body'>
-                                <h5 class='card-header'><?php echo $title ?></h5>
-                                <p class='card-text'>Author: <?php echo $author?></p>
-                                <p class='card-text'>Pages: <?php echo $pages?></p>
-
-                                <div class='read-more-place'>
-                                    <button class='btn btn-primary btn-default'><b>Rent</b></button>
-                                </div>
-                            </div>
-                            <!-- <div class='card-footer'>
-                                    <small class='text-muted float-right'>dit zijn producten xD</small>
-                                </div> -->
-                        </div>
-                    </div>
-                </div>
-                <br>
+                <?php
+            }
+?>
             </div>
+            <nav class="nav flex-column">
+                <?php
+                if (isset($_GET['id'])) {
+                    $edit = $_GET["id"];
+                }
+                if (isset($_GET['id'])) {
+                ?>
+                <p>Currently edditing: <?php echo $edit;?></p>
+                <?php
+                }
+                ?>
+                <a class="nav-link" href="create.php">Create</a>
+                <a class="nav-link" href="#">Read</a>
+                <a class="nav-link" href="update.php?update=<?php echo $edit;?>">Update</a>
+                <a class="nav-link" href="#">Delete</a>
+            </nav>
 
             <?php
                 }
             }
 
             $liqry->close();
-        }
+        
 
         ?>
         </div>

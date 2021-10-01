@@ -1,5 +1,5 @@
 <?php
-include "../../include/header.php";?>
+include "include/header.php";?>
     <div id="frmRegistration">
         <form class="form-horizontal" action="updatebook.php?id=5" method="POST">
             <h1>Update book data</h1>
