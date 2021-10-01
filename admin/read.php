@@ -30,16 +30,10 @@ if ($login->isUserLoggedIn() == true) {
                     }
                    
                     ?>
-                    
-                    
-
-            <?php
-                    $locationonclick = "' onclick='location.href=\"views/rent.php?id=" . $id . "\"'";
-                    ?>
             <div class='col-md-3 '>
                 <div class='mr-2'>
                     <div class="row">
-                        <div class='card' <?php echo $locationonclick  ?>>
+                        <div class='card'>
                             <!-- <img class='card-img-top' src='assets/img/product.png' alt='Card image cap'> -->
                             <div class='card-body'>
                             <h5 class='card-title'>ID=<?php echo $id;?></h5>

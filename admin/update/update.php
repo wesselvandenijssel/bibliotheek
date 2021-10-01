@@ -1,7 +1,8 @@
 <?php
+require_once "../config/config.php";
 if(isset($_POST['update'])){
 
-    $id = $_GET['id'];
+    $id = $_GET['update'];
     $title = $_POST['title'];
     $author= $_POST['author'];
     $isbn13 = $_POST['isbn13'];
@@ -13,11 +14,11 @@ if(isset($_POST['update'])){
 
     $sql = "UPDATE `bibliotheek` SET `title`= '$title',`author`='$author',`isbn13`='$isbn13',
     `format`='$format',`publisher`='$publisher',`pages`='$pages',
-    `dimensions`='$dimensions',`overview`='$overview' WHERE `bibliotheekid`=$id"  ;
-    echo $sql;
-    echo $id;
-    echo $title;
-    $result = mysqli_query($conn, $sql);
+    `dimensions`='$dimensions',`overview`='$overview' WHERE `bibliotheekid`='$id'"  ;
+    // echo $sql;
+    // echo $id;
+    // echo $title;
+    $result = mysqli_query($con, $sql);
     if($result){
         echo '<script type="text/javascript"> alert("Data Update")</script>';
 
@@ -25,5 +26,6 @@ if(isset($_POST['update'])){
     else{
         echo '<script type="text/javascript"> alert("Data NOT Update")</script>';
     }
+    var_dump ($result);
 }
 ?>
